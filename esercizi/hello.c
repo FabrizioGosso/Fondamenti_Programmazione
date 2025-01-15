@@ -1,4 +1,5 @@
 #include <stdio.h> //input output library
+#include <stdbool.h> // boolean library
 
 //main function - the entry point
 //il main restituisce un intero
