@@ -20,8 +20,20 @@ double peso, riclabile, scarto;
 // Messaggio e input dati
 printf("Benvenuto, %s %s!\n", NOME, COGNOME);
 
-printf("Inserisci la categoria RAEE del tuo dispositivo: \n");
-scanf("%2s", categoria);
+int categoria_valida = 0;
+while (!categoria_valida) { // Il ciclo si ripete finchè non viene inserita una categoria valida
+    printf("Inserisci la categoria RAEE del tuo dispositivo: \n");
+    scanf("%2s", categoria);
+
+    if (strcasecmp(categoria, "R1") == 0 || strcasecmp(categoria, "R2") == 0 ||
+        strcasecmp(categoria, "R3") == 0 || strcasecmp(categoria, "R4") == 0 ||
+        strcasecmp(categoria, "R5") == 0) {
+        categoria_valida = 1;  // Esci dal ciclo
+    } else {
+        printf("Categoria non valida! Riprova.\n");
+        printf("Suggerimento, le categorie sono queste: (R1, R2, R3, R4, R5)\n");
+    }
+}
 
 printf("Inserisci il peso in Kg: \n");
 scanf("%lf", &peso);
