@@ -8,7 +8,7 @@
 #define SOGLIA 200.0
 
 // Configurazioni per abilitare/disabilitare il calcolo della penale
-#define CALCOLA_PENALITA
+//#define CALCOLA_PENALITA
 
 // Definizioni per abilitare/disabilitare il debug
 //#define DEBUG
