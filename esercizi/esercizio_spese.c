@@ -78,7 +78,7 @@ int main() {
     printf("Acqua: %.2f\n", acqua);
     printf("Gas: %.2f\n", gas);
     printf("Internet: %.2f\n", internet);
-    printf("Totale: %.2f\n", totale);
+    printf("Totale: %.2f\n\n", totale);
 
     return 0;
 }
