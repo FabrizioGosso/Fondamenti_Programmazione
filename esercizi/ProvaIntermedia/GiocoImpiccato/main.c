@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
+#include <time.h>
 #include "game_functions.h"
 
 int main() {
@@ -7,8 +9,36 @@ int main() {
     char hidden_word[20];  // Versione nascosta
     int attempts = 0;
     char guess;
+    int choice;
 
-    select_random_word(word);
+    printf("Scegli se usare l'array predefinito (1) o inserire le tue parole (2): ");
+    scanf("%d", &choice);
+
+    if (choice == 1) {
+        // Usa l'array predefinito
+        select_random_word(word);
+    } else if (choice == 2) {
+        // L'utente inserisce manualmente una parola
+        int n;
+        printf("Quante parole vuoi aggiungere? ");
+        scanf("%d", &n);
+        char custom_words[n][20];
+
+        printf("Inserisci le tue parole (una per volta):\n");
+        for (int i = 0; i < n; i++) {
+            printf("Parola %d: ", i + 1);
+            scanf("%s", custom_words[i]);
+        }
+
+        // Scegli una parola casuale dalla lista personalizzata
+        srand(time(NULL));
+        int index = rand() % n;
+        strcpy(word, custom_words[index]);
+    } else {
+        printf("Scelta non valida! Uscendo...\n");
+        return 1;
+    }
+
     int word_length = strlen(word);
 
     // Inizializza la parola nascosta con '*'
