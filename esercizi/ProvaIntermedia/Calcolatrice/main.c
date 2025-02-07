@@ -17,7 +17,8 @@ int main() {
         printf("6. Potenza (^)\n");
         printf("7. Test di tutte le funzioni\n");
         printf("8. Esci\n");
-        printf("Scegli un'operazione (1-8): ");
+        printf("9. Test con dati personalizzati\n");
+        printf("Scegli un'operazione (1-9): ");
         scanf("%d", &choice);
 
         if (choice >= 1 && choice <= 6) {
@@ -53,6 +54,9 @@ int main() {
                 break;
             case 8:
                 printf("Uscita dal programma...\n");
+                break;
+            case 9:
+                test_custom_data();
                 break;
             default:
                 printf("Scelta non valida! Riprova.\n");

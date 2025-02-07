@@ -1,5 +1,6 @@
 #include "operations.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 // Funzione di addizione
 int add(int a, int b) {
@@ -60,4 +61,31 @@ void test_all_operations(int arr[], int size) {
         printf("%d ^ %d = %d\n", arr[i], arr[i + 1], power(arr[i], arr[i + 1]));
         printf("\n");
     }
+}
+
+// Funzione di test con dati personalizzati
+void test_custom_data() {
+    int size;
+    
+    // Chiede all'utente la dimensione dell'array
+    printf("Quanti numeri vuoi inserire? ");
+    scanf("%d", &size);
+
+    if (size < 2) {
+        printf("Errore: Devi inserire almeno due numeri per eseguire i test!\n");
+        return;
+    }
+
+    int *arr = (int *)malloc(size * sizeof(int)); // Allocazione dinamica dell'array
+
+    // Inserimento dei numeri
+    printf("Inserisci %d numeri separati da spazio: ", size);
+    for (int i = 0; i < size; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    // Esegui il test sulle operazioni
+    test_all_operations(arr, size);
+
+    free(arr); // Libera la memoria allocata
 }

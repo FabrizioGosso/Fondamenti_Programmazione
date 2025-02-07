@@ -8,5 +8,6 @@ float divi(int, int);
 int mod(int, int);
 int power(int, int);
 void test_all_operations(int arr[], int size);
+void test_custom_data();
 
 #endif
